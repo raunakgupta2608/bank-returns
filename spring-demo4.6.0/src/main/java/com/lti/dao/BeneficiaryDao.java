@@ -21,7 +21,7 @@ public class BeneficiaryDao
 	
 	public String saveBeneficiaryDetails( BeneficiaryDetails beneficiarydetails, CompositeKey compositekey, int userid  )
 	{
-		int beneficiaryaccno =  beneficiarydetails.getBeneficiaryaccno();
+		int beneficiaryaccno =  compositekey.getBeneficiaryaccno();
 		retint = checkForValidity( beneficiaryaccno );
 		if( retint == 1)
 		{

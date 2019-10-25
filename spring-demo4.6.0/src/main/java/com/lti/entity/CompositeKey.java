@@ -10,6 +10,11 @@ public class CompositeKey implements Serializable
 	private int beneficiaryaccno;
 	private int userid;
 	
+	public CompositeKey()
+	{
+		
+	}
+	
 	public CompositeKey(int beneficiaryaccno, int userid) {
 		super();
 		this.beneficiaryaccno = beneficiaryaccno;

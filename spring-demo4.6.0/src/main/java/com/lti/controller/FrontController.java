@@ -1,5 +1,7 @@
 package com.lti.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -57,6 +59,7 @@ public class FrontController
 		System.out.println("leaving front controller fetchPasswordFromSetPasswordPage");
 		return "enterotp.jsp";
 	}
+	
 	@RequestMapping(path="/userlogin.lti", method=RequestMethod.POST)
 	public String otpEnteredByUser( Registerib thirdreqobj, Otp otpobj, @RequestParam("otp") int otp )
 	{
@@ -89,14 +92,14 @@ public class FrontController
 	
 	
 	@RequestMapping(path="/dashboardafterpayee.lti", method=RequestMethod.POST)
-	public String saveBeneficiaryDetails(  BeneficiaryDetails beneficiarydetails, Model model, CompositeKey compositekey )
+	public String saveBeneficiaryDetails(   BeneficiaryDetails beneficiarydetails, Model model, CompositeKey compositekey )
 	{
 		int userid = globaluserid;
 		
 		System.out.println("entering front controller saveBeneficiaryDetails");
+		
 		ret = beneficiaryController.saveBeneficiaryDetails( beneficiarydetails, compositekey, userid  );
 		
-		beneficiarydetails.setCompositekey(compositekey);
 		if(ret.equals("dashborad.jsp"))
 		{
 			return ret;

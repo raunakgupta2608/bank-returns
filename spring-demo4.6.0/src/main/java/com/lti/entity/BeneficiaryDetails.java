@@ -12,20 +12,11 @@ public class BeneficiaryDetails
 	@Id
 	private CompositeKey compositekey;
 	
-	@Column(name="beneficiaryaccno")
-	private int beneficiaryaccno;
 	@Column(name="beneficiaryname")
 	private String beneficiaryname;
-	@Column(name="nickname")
-	private String nickname;
+	@Column(name="beneficiarynickname")
+	private String beneficiarynickname;
 
-	public int getBeneficiaryaccno() {
-		return beneficiaryaccno;
-	}
-
-	public void setBeneficiaryaccno(int beneficiaryaccno) {
-		this.beneficiaryaccno = beneficiaryaccno;
-	}
 
 	public String getBeneficiaryname() {
 		return beneficiaryname;
@@ -35,12 +26,12 @@ public class BeneficiaryDetails
 		this.beneficiaryname = beneficiaryname;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public String getbeneficiarynickname() {
+		return beneficiarynickname;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setbeneficiarynickname(String beneficiarynickname) {
+		this.beneficiarynickname = beneficiarynickname;
 	}
 
 	public CompositeKey getCompositekey() {

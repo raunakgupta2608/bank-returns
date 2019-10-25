@@ -185,7 +185,7 @@
             <tr>
               <td class="one">Nick Name</td>
               <td class="two">-</td>
-              <td class="third"><input type="text" name =beneficiarynickname" required></td>
+              <td class="third"><input type="text" name ="beneficiarynickname" required></td>
             </tr>
 	        </table>  
 
