@@ -14,7 +14,7 @@ public class Customer
 {
 
 	@Id
-	@GeneratedValue ( strategy = GenerationType.AUTO, generator ="customersequence")
+	@GeneratedValue ( strategy = GenerationType.AUTO, generator ="accno")
 /*	@SequenceGenerator( name ="customersequence", initialValue=1000, allocationSize=1, sequenceName="account")
 	@GeneratedValue ( strategy = GenerationType.SEQUENCE, generator ="customersequence")*/
 	@Column(name="accno")

@@ -1,10 +1,14 @@
 package com.lti.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -18,25 +22,35 @@ public class Admin
 	@GeneratedValue ( strategy = GenerationType.SEQUENCE, generator ="requestidseq" )*/
 	@Column(name="requestid")
 	private int requestid;
-	@Column(name="accno")
-	private int accno;
+	/*
+	 * @Column(name="accno") private int accno;
+	 */
 	@Column(name="emailid")
 	private String emailid;
 	@Column(name="status", columnDefinition = "integer default 0")
 	private int status;
 	
+	@OneToOne( cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn( name = "accno")
+	private Customer customer;
+	
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 	public int getRequestid() {
 		return requestid;
 	}
 	public void setRequestid(int requestid) {
 		this.requestid = requestid;
 	}
-	public int getAccno() {
-		return accno;
-	}
-	public void setAccno(int accno) {
-		this.accno = accno;
-	}
+
+	/*
+	 * public int getAccno() { return accno; } public void setAccno(int accno) {
+	 * this.accno = accno; }
+	 */
 	public String getEmailid() {
 		return emailid;
 	}

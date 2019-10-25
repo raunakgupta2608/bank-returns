@@ -1,9 +1,12 @@
 package com.lti.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +21,8 @@ public class BeneficiaryDetails
 	@Column(name="beneficiarynickname")
 	private String beneficiarynickname;
 
+	@OneToOne( cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	private Registerib registerib;
 
 	public String getBeneficiaryname() {
 		return beneficiaryname;

@@ -20,7 +20,7 @@ public class CustomerService
 			
 			public void openSavingAccount(Customer customer, Admin admin) 
 			{
-				int accno = customerDao.openSavingAccount(customer,admin); //ask the dao to save it in the db
+		/* int accno = */customerDao.openSavingAccount(customer,admin); //ask the dao to save it in the db
 				//sending emailcode here
 				/*sendEmail( accno, customer );*/
 				/*getEmail(); getAccno();*/

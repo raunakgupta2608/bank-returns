@@ -25,14 +25,17 @@ public class CustomerDao {
 	
 	
 	@Transactional
-	public int openSavingAccount(Customer customer, Admin admin) 
+	public void openSavingAccount(Customer customer, Admin admin) 
 	{
 		 dateCompute(customer);
+		 System.out.println("first save of customer");
 		 entityManager.merge(customer); // both insert and update
-		 int aadharno = customer.getAadharno();
-		 int accno = fetchAccno( aadharno );
+		 admin.setCustomer(customer);
+		/*
+		 * int aadharno = customer.getAadharno(); int accno = fetchAccno( aadharno );
+		 */
 		 admindao.saveCustomerDataIntoAdminDatabase(customer, admin);
-		 return accno;
+		/* return accno; */
 	}
 	
 	public void dateCompute(Customer customer)
@@ -84,13 +87,12 @@ public class CustomerDao {
 	 */
 	 
 	
-	public int fetchAccno( int aadharno) 
-	{
-		Query q = entityManager.createQuery("select accno from Customer c  where c.aadharno = :aadharno");
-		q.setParameter("aadharno", aadharno);
-		int accno = (Integer) q.getSingleResult();
-		return accno;
-	}
+	/*
+	 * public int fetchAccno( int aadharno) { Query q = entityManager.
+	 * createQuery("select accno from Customer c  where c.aadharno = :aadharno");
+	 * q.setParameter("aadharno", aadharno); int accno = (Integer)
+	 * q.getSingleResult(); return accno; }
+	 */
 
 	/*public List<Customer> fetchAll() {
 		String q1 = "select c from Customer c";
