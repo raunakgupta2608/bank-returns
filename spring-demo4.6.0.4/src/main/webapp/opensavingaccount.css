@@ -1,0 +1,140 @@
+#img
+{
+	width="150px";
+	height="150px";
+}
+#imgtab
+{
+	font-size:125%; 
+        margin-left:20;
+	//border:1px solid black;
+}
+#container 
+{
+  border-radius: 20px;
+  background-color:#FFA500;
+  width:50%;
+  height:175vh; 
+  margin-left:25%;
+  margin-top:5%;
+  border:1px solid black;
+}
+#upperdiv
+{
+  margin-top:5%;
+  margin-left:10%;
+  width:80%;
+  height:3%;
+  //border:1px solid red;
+}
+#solid
+{
+  border-style: solid;
+  box-sizing: border-box; 
+  text-align: center;
+  padding:7px;
+  //border: 2px solid black;
+  font-weight:bold;
+}
+#lowerdiv1
+{
+  height:45%;
+  width:80%;	
+  margin-left:10%;
+  //border:1px solid red;
+}
+#tab
+{
+  width:80%;
+  height:50%;
+  margin-left:10%;
+  margin-top:1%;
+  //border: 2px solid purple;
+}
+#tab h3
+{
+  width:100%;
+  margin-left:60%;
+  //border: 2px solid red;
+}
+#tab .one
+{
+  padding-left:10%;
+  //border: 1px solid red;
+}
+#tab .two
+{
+  //border: 1px solid red;
+}
+#tab .third
+{
+  padding-left:5%;
+  //border: 1px solid red;
+}
+#lowerdiv2
+{
+  height:40%;
+  width:80%;	
+  margin-left:10%;
+  //border:1px solid brown;
+}
+#checkbox
+{
+  width:80%;
+  margin-left:10%;
+  padding-top:3%;
+  //border: 1px solid red;
+}
+#buttondiv
+{
+  width:80%;
+  height:15%;
+  margin-left:10%;
+  //border: 1px solid purple;
+}
+.button
+{
+  background-color:#333; 
+  border: none;
+  color: white;
+  margin-top:5%;
+  margin-left:35%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+div.row
+{
+	text-align: center;
+}
+
+ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#333;
+}
+li
+{
+  float: left;
+}
+li a
+{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover:not(.active)
+ {
+  background-color:#ff8c1a;
+}
+.active {
+  background-color:#ff8c1a;
+}
