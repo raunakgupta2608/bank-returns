@@ -11,18 +11,18 @@
 #container {
   border-radius: 20px;
   background-color:#FFA500;
-  width:75%;
+  width:95%;
   height:50vh; 
-  margin-left:12%;
+  margin-left:2%;
   margin-top:5%;
   border:1px solid black;
 }
 #lowerdiv
 {
   height:40%;
-  width:80%;
-  margin-top:15%;	
-  margin-left:10%;
+  width:96%;
+  margin-left:2%;
+  margin-right:2%;
   //border:1px solid red;
 }
 input[type=submit]
@@ -30,7 +30,7 @@ input[type=submit]
   background-color:#333; 
   border: none;
   color: white; 
-  margin-top:5%;
+  
   margin-left:35%;
   padding: 5px 15px;
   text-align: center;
@@ -39,6 +39,18 @@ input[type=submit]
   font-size: 16px;
   cursor: pointer;
 }
+table
+{
+	width:100%;	
+}
+ td
+{
+	overflow:hidden;
+}
+#link
+{
+	
+}
 
 
 
@@ -46,11 +58,11 @@ input[type=submit]
 
 </head>
 <body>
-
+<a href="home.jsp" id ="homelink">Home</a>
 <div id="container">
-
+	
 	<div id="lowerdiv">
-        	<a href="home.jsp">Home</a>
+        	
 		<c:forEach items="${ alladmindata }" var="ayush">
 			
 				<table>
@@ -65,6 +77,7 @@ input[type=submit]
 						<td><input type="text" value="${ ayush.emailid }" name="emailid" ></td>
 						<td><input type="text"  name="msg" ></td>
 						<td><input type="submit" id="submit" value="Submit"></td>
+						<td id="link"><a href="customerdetailsforadmin.lti">View Full Details</a></td>
 					</form>	
 					</tr>	
 					

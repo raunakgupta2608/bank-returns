@@ -212,21 +212,17 @@ public class FrontController
 		else
 		{
 			System.out.println("esle" +msg);
-			adminController.sendRejetctMail(emailid,msg);
+			adminController.sendRejetctMail(accno,emailid,msg);
 			return "adminview.jsp";
 		}
-		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@RequestMapping(path="/customerdetailsforadmin.lti", method=RequestMethod.POST)
+	public String customerDetailsForAdmin( int accno, Model model  )
+	{
+		adminController.customerDetailsForAdmin( accno );
+		return "customerdetailsforadmin.jsp";
+	}
 	
 	@Autowired
 	private ForgotPasswordController forgotPasswordController;

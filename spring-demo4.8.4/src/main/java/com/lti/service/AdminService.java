@@ -24,7 +24,7 @@ public class AdminService
 	private AdminDao adminDao;
 	
 	String emailid="";
-	/*int accno;*/
+	/*int accnumber;*/
 	
 	public List<Admin> fetchDataForAdmin( )
 	{
@@ -33,15 +33,16 @@ public class AdminService
 	public void adminApprovedNowSendMail(  int accno, String emailid )
 	{
 		System.out.println("enterred admin service adminApprovedNowSendMail(  )");
-		/*accno = adminDao.getAccno( emailid);*/
+		/*accnumber = adminDao.getAccno( emailid);*/
 		sendEmail(accno, emailid);
 		adminDao.updateStatus( accno );
 	}
-	public void sendRejetctMail(String emailid,String msg) 
+	public void sendRejetctMail( int accnumber,String emailid,String msg) 
 	{
-		rejetctMail(emailid,msg );
+		rejetctMail( accnumber, emailid,msg );
+		adminDao.updateStatusToOne( accnumber);
 	}
-	public void rejetctMail(String emailid, String msg)
+	public void rejetctMail( int accno, String emailid, String msg)
 	{
 		System.out.println(" inside sendEmail method "+emailid);
 
@@ -75,6 +76,11 @@ public class AdminService
 			System.out.println("message sent successfully");
 		} 
 		catch (MessagingException e) {  System.out.println(e); }
+	}
+	
+	public void customerDetailsForAdmin( int accno )
+	{
+		adminDao.customerDetailsForAdmin( accno );
 	}
 /*	public void getEmail()
 	{

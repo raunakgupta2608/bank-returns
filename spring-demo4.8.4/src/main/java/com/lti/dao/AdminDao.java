@@ -72,11 +72,37 @@ public class AdminDao
 		 
 		return q.getResultList();
 	}
+	public List<Customer> customerDetailsForAdmin( int accno )
+	{
+		String q1= "select c from Customer c where c.accno = :accno";
+		Query q =entityManager.createQuery(q1);
+		q.setParameter( "accno", accno);
+		List<Customer> customerdata = q.getResultList();
+		ListIterator<Customer> iterator = customerdata.listIterator();
+		  
+		  while (iterator.hasNext()) 
+		  { 
+			  System.out.println("Value is : "+ iterator.next() ); 
+		  } 
+		  System.out.println("leaving admin dao getEmail()");*/
+	}
 	@Transactional
 	public void updateStatus( int accno )
 	{
 		System.out.println("enterred admin dao updateStatus()");
 		String q1= "UPDATE Admin a SET a.status = 1 WHERE a.status = 0 and a.accno=:accno";
+		Query q =entityManager.createQuery(q1);
+		q.setParameter("accno", accno);
+		int rowsUpdated = q.executeUpdate();
+		System.out.println( rowsUpdated );
+		
+	}
+	
+	@Transactional
+	public void updateStatusToOne( int accno )
+	{
+		System.out.println("enterred admin dao updateStatus()");
+		String q1= "UPDATE Admin a SET a.status = 2 WHERE a.status = 0 and a.accno=:accno";
 		Query q =entityManager.createQuery(q1);
 		q.setParameter("accno", accno);
 		int rowsUpdated = q.executeUpdate();

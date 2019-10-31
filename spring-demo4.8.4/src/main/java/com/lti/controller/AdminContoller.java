@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
 import com.lti.entity.Admin;
+import com.lti.entity.Customer;
 import com.lti.service.AdminService;
 
 @Controller
@@ -24,9 +26,12 @@ public class AdminContoller
 		adminService.adminApprovedNowSendMail( accno,emailid );
 	}
 	
-	public void sendRejetctMail(String emailid,String msg) 
+	public void sendRejetctMail(int accno, String emailid,String msg) 
 	{
-		adminService.sendRejetctMail(emailid,msg );
+		adminService.sendRejetctMail( accno,emailid,msg );
 	}
-	
+	public void customerDetailsForAdmin( int accno )
+	{
+		adminService.customerDetailsForAdmin( accno );
+	}
 }
